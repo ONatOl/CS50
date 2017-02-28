@@ -1,2 +1,2 @@
 # CS50
-My solutions to problem set.
+My solutions to the problem sets.
