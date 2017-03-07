@@ -39,7 +39,7 @@ int main(int argc, string argv[])
     for (int j = 0, n = strlen(k); j < n; j++)
         k[j] = toupper(k[j]);
     int step;    
-    int flag = 0;    
+    int way = 0;    
     for (int i =  0, n = strlen(s); i < n; i++)       
     {
         if (isalpha(s[i]))
@@ -48,7 +48,7 @@ int main(int argc, string argv[])
                     step = 65;
                 else 
                     step = 97;  
-                PrintLetters(s[i], k[flag%strlen(k)], step, &flag);
+                PrintLetters(s[i], k[way%strlen(k)], step, &way);
             }
         
         else
@@ -58,8 +58,8 @@ int main(int argc, string argv[])
     return 0;
 }  
 
-void PrintLetters(char sf, char kf, int stepf, int *flagf)
+void PrintLetters(char sf, char kf, int stepf, int *wayf)
 {
     printf("%c", (sf - stepf + kf-65) % 26 + stepf);
-    (*flagf)++;
+    (*wayf)++;
 }    
