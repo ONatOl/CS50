@@ -13,3 +13,7 @@ pset2:
 https://sandbox.cs50.net/checks/54184601f758460380e5c76fd3e9ca27
 https://sandbox.cs50.net/checks/cf95f1da08e54f16ad1ea159f8ba250b
 https://sandbox.cs50.net/checks/c3396ce4448240f991bbb55ede82946a
+
+pset3:
+
+https://sandbox.cs50.net/checks/bc1c665842b645939ba6ed9e82c1263e
