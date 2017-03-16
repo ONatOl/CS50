@@ -32,10 +32,10 @@ int d;
 // prototypes
 void clear(void);
 void greet(void);
-int* init(int a, int b[DIM_MAX][DIM_MAX]);
-void draw(int a, int b[DIM_MAX][DIM_MAX]);
-bool move(int t, int a, int b[DIM_MAX][DIM_MAX]);
-bool won(int a, int b[DIM_MAX][DIM_MAX]);
+void init(void);
+void draw(void);
+bool move(int t);
+bool won(void);
 
 int main(int argc, string argv[])
 {
@@ -66,7 +66,7 @@ int main(int argc, string argv[])
     greet();
 
     // initialize the board
-    init(d, board);
+    init();
 
     // accept moves until game is won
     while (true)
@@ -75,7 +75,7 @@ int main(int argc, string argv[])
         clear();
 
         // draw the current state of the board
-        draw(d, board);
+        draw();
 
         // log the current state of the board (for testing)
         for (int i = 0; i < d; i++)
@@ -93,7 +93,7 @@ int main(int argc, string argv[])
         fflush(file);
 
         // check for win
-        if (won(d, board))
+        if (won())
         {
             printf("ftw!\n");
             break;
@@ -114,7 +114,7 @@ int main(int argc, string argv[])
         fflush(file);
 
         // move if possible, else report illegality
-        if (!move(tile, d, board))
+        if (!move(tile))
         {
             printf("\nIllegal move.\n");
             usleep(500000);
@@ -154,66 +154,64 @@ void greet(void)
  * Initializes the game's board with tiles numbered 1 through d*d - 1
  * (i.e., fills 2D array with values but does not actually print them).  
  */
-int* init(int df, int b[DIM_MAX][DIM_MAX]) 
+void init(void) 
 {
-    int step = df * df - 1;
-    for (int i = 0; i < df; i++)
+    int step = d * d - 1;
+    for (int i = 0; i < d; i++)
     {
-        for (int j = 0; j < df; j++)
+        for (int j = 0; j < d; j++)
         {
-            b[i][j] = step;
+            board[i][j] = step;
             step--;
         }
     }
-    if (df % 2 == 0)
+    if (d % 2 == 0)
     {
-        int temp = b[df-1][df-2];
-        b[df-1][df-2] = b[df-1][df-3];
-        b[df-1][df-3] = temp;
+        int temp = board[d-1][d-2];
+        board[d-1][d-2] = board[d-1][d-3];
+        board[d-1][d-3] = temp;
     }
-    return *b;
 }
 
 /**
  * Prints the board in its current state.
  */
-void draw(int df, int b[DIM_MAX][DIM_MAX])
+void draw(void)
 {
-    for (int i = 0; i < df; i++)
+    for (int i = 0; i < d; i++)
     {
-        for (int j = 0; j < df; j++)
+        for (int j = 0; j < d; j++)
         {
-            if (b[i][j] == 0)
+            if (board[i][j] == 0)
                 printf("  _ ");
             else 
-                printf(" %2i ", b[i][j]);
-            if (j < df - 1)
+                printf(" %2i ", board[i][j]);
+            if (j < d - 1)
             {
                 printf("|");
             }
         }
         printf("\n");
     }
-    return;
 }
 
 /**
  * If tile borders empty space, moves tile and returns true, else
  * returns false. 
  */
-bool move(int t, int df, int b[DIM_MAX][DIM_MAX])
+bool move(int t)
 {
     int tLine, tColumn, bLine, bColumn;
-    for (int i = 0; i < df; i++)
+    for (int i = 0; i < d; i++)
     {
-        for (int j = 0; j < df; j++)
+        for (int j = 0; j < d; j++)
         {
-            if (b[i][j] == t)
+            if (board[i][j] == t)
             {
                 tLine = i;
                 tColumn = j;
             }
-            if (b[i][j] == 0)
+            if (board[i][j] == 0)
             {
                 bLine = i;
                 bColumn = j;
@@ -222,9 +220,9 @@ bool move(int t, int df, int b[DIM_MAX][DIM_MAX])
     }
     if (((bLine==tLine) && ((tColumn==bColumn+1) || (tColumn==bColumn-1))) || ((bColumn==tColumn) && ((tLine==bLine+1) || (tLine==bLine-1))))
     {
-        int temp1 = b[bLine][bColumn];
-        b[bLine][bColumn] = b[tLine][tColumn];
-        b[tLine][tColumn] = temp1;
+        int temp1 = board[bLine][bColumn];
+        board[bLine][bColumn] = board[tLine][tColumn];
+        board[tLine][tColumn] = temp1;
         return true;
     }
     else
@@ -235,25 +233,25 @@ bool move(int t, int df, int b[DIM_MAX][DIM_MAX])
  * Returns true if game is won (i.e., board is in winning configuration), 
  * else false.
  */
-bool won(int df, int b[DIM_MAX][DIM_MAX])
+bool won(void)
 {
     int w = 0;
-    if (b[0][0] != 1)
+    if (board[0][0] != 1)
         w++;
-    for (int i = 0; i < df; i++)
+    for (int i = 0; i < d; i++)
     {
-        for (int j = 0; j < df; j++)
+        for (int j = 0; j < d; j++)
         {
-            if (! (((i == df - 1) && (j == df - 1)) || ((i == df - 1) && (j == df - 2))))
+            if (! (((i == d - 1) && (j == d - 1)) || ((i == d - 1) && (j == d - 2))))
             {
-                if (j == df -1)
+                if (j == d -1)
                 {
-                    if (b[i][j] > b[i+1][0])
+                    if (board[i][j] > board[i+1][0])
                         w++;
                 }        
                 else
                 {
-                    if (b[i][j] > b[i][j+1])
+                    if (board[i][j] > board[i][j+1])
                         w++;
                 }        
             }    
