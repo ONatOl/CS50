@@ -1,7 +1,7 @@
 /**
  * initials.c
  * 
- * Natalya Ostiak
+ * Natalia Ostiak
  * Technology Nation
  * 
  * Given a person’s name, prints a person’s initials.
