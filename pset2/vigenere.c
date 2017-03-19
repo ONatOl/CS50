@@ -1,7 +1,7 @@
 /**
  * vigenere.c
  * 
- * Natalya Ostiak
+ * Natalia Ostiak
  * Technology Nation
  * 
  * Encrypts messages using Vigenère’s cipher.
