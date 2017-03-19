@@ -1,7 +1,7 @@
 /**
  * caesar.c
  * 
- * Natalya Ostiak
+ * Natalia Ostiak
  * Technology Nation
  * 
  * Encrypts messages using Caesar’s cipher.
