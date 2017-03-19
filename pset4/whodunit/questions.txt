@@ -1,0 +1,12 @@
+1.  stdint.h is a header file in the C standard library introduced in the C99 standard library to allow programmers to write more portable code by providing a set of typedefs that specify exact-width integer types, together with the defined minimum and maximum allowable values for each type, using macros.
+2.  The point of using uint8_t, uint32_t, int32_t, and uint16_t in a program is defining BYTE, DWORD, LONG, and WORD.
+3.  1, 4, 4, 2.
+4.  The first two bytes of any BMP file must be BM(ASCII), 66 77(decimal), 0x42 0x4D(hexadecimal).
+5.  bfSize - size of the BMP file, biSize - size of the raw bitmap data (including padding).
+6.  If biHeight is negative bitmaps are stored from the top to bottom and can't be compressed. 
+7.  BitCount
+8.  fopen might return NULL in line 24 of copy.c if the file doesn't exist or if fopen isn't successful ( in lines 24 and 32 of copy.c).
+9.  The third argument to fread is always 1 in our code to read one element of data.
+10. padding = 3
+11. The  fseek()  function  sets the file position indicator for the stream.
+12. The position specified  by SEEK_CUR means the offset is relative to the current position indicator.
