@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
             {
                 triple.rgbtBlue = 0x00;
                 triple.rgbtGreen = 0x00;
-                triple.rgbtRed = 0xff;
+                
             }
             
             // write RGB triple to outfile
