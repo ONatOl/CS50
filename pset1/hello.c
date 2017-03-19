@@ -1,7 +1,7 @@
 /**
  * hello.c
  *
- * Natalya Ostiak
+ * Natalia Ostiak
  * Technology Nation
  *
  * Says hello to the world.
