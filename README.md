@@ -18,3 +18,7 @@ pset3:
 
 https://sandbox.cs50.net/checks/bc1c665842b645939ba6ed9e82c1263e
 https://sandbox.cs50.net/checks/29db23785e72401f9ef9b758436850b3
+
+pset4:
+
+whodunit - DONE
