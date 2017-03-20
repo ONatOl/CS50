@@ -1,5 +1,10 @@
 /**
- * Copies a BMP piece by piece, just because.
+ * whodunit.c
+ * 
+ * Natalia Ostiak
+ * Technology Nation
+ * 
+ * Reveals a hidden message in a BMP.
  */
        
 #include <stdio.h>
