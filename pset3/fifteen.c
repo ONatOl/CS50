@@ -218,7 +218,8 @@ bool move(int t)
             }
         }
     }
-    if (((bLine==tLine) && ((tColumn==bColumn+1) || (tColumn==bColumn-1))) || ((bColumn==tColumn) && ((tLine==bLine+1) || (tLine==bLine-1))))
+    if ( ((bLine==tLine) && ((tColumn==bColumn+1) || (tColumn==bColumn-1))) || 
+        ((bColumn==tColumn) && ((tLine==bLine+1) || (tLine==bLine-1))) )
     {
         int temp1 = board[bLine][bColumn];
         board[bLine][bColumn] = board[tLine][tColumn];
