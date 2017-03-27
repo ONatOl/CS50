@@ -88,10 +88,8 @@ int main(int argc, char *argv[])
     
     // write outfile's BITMAPFILEHEADER 
     fwrite(&bfN, sizeof(BITMAPFILEHEADER), 1, outptr);
-
     // write outfile's BITMAPINFOHEADER
-    fwrite(&biN, sizeof(BITMAPINFOHEADER), 1, outptr);
-    
+    fwrite(&biN, sizeof(BITMAPINFOHEADER), 1, outptr);    
 
     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
@@ -121,17 +119,15 @@ int main(int argc, char *argv[])
             {
                 fputc(0x00, outptr);
             }
-            // turn back to the start of the scanline
-           
+         
+            // turn back to the start of the scanline           
             if (z < n-1) 
-                fseek(inptr, 54 + i * (bi.biWidth * 3 + padding), SEEK_SET); 
-                
+                fseek(inptr, 54 + i * (bi.biWidth * 3 + padding), SEEK_SET);                 
         }    
     }
 
     // close infile
     fclose(inptr);
-
     // close outfile
     fclose(outptr);
 
