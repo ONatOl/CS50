@@ -35,12 +35,7 @@ unsigned int wordsD = 0;
  */
 bool check(const char *word)
 {
-    node *newPointer = root;
-    if (root == NULL)
-        {
-            fprintf(stderr, "Could not allocate memory");
-            return 1;
-        }
+    node *newPointer = root;    
     
     // define an index of the array of characters
     int i = 0;
@@ -74,6 +69,11 @@ bool load(const char *dictionary)
     
     // allocate memory for a node and initialise the node
     root = calloc(1, sizeof(node));
+    if (root == NULL)
+        {
+            fprintf(stderr, "Could not allocate memory");
+            return 1;
+        }
     
     // the pointer to a current node
     node *newPointer = root;
