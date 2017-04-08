@@ -45,14 +45,14 @@ int main(int argc, char *argv[])
         {
             // close output file
             if (outFile != NULL) 
-            fclose(outFile);
+                fclose(outFile);
                     
             sprintf(outFileNow, "%03d.jpg", count);
             count++;
             outFile = fopen(outFileNow, "wb");
         }  
         if (outFile != NULL)
-            fwrite(buffer, 1, 512, outFile);
+           fwrite(buffer, 1, 512, outFile);
     }
     free(buffer);
     
