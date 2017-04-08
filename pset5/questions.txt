@@ -1,0 +1,13 @@
+0.  The longest word in English.
+1.  int getrusage(int who, struct rusage *usage); getrusage() returns resource usage measures for who.
+2.  16 members.
+3.  Because they are structures. 
+4.  We read each word’s characters one at a time. If the character is an alphabetical one or an apostrophe
+    we append the character to the word. If the character is a number or the alphabetical string is
+    too long to be a word we consume the remainder of the alphabetical string. If the character 
+    is '\0' we've found a word. We update WORDS IN TEXT. Then we check word's spelling and update 
+    TIME IN check. If the word is misspelled we print it and update WORDS MISSPELLED. Then we read 
+    next word’s characters until the end of the text.
+5.  We used fgetc to read each word’s characters one at a time to check if the character is 
+    an alphabetical one or an apostrophe.
+6.  We shouldn't  change those parameters in our program.
