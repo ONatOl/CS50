@@ -109,11 +109,12 @@ bool load(const char *dictionary)
             // move the pointer to a current node
             newPointer = newPointer -> children[i];   
         }    
-        newPointer -> is_word = true;
-        newPointer = root;
+        
         if (feof(inFile))
             break;
-            
+        
+        newPointer -> is_word = true;
+        newPointer = root;            
         wordsD++;
     }
     fclose(inFile);
