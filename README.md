@@ -25,3 +25,7 @@ pset4:
 whodunit - DONE                                               
 https://sandbox.cs50.net/checks/0361e30e94dc464daba3209f7ad11630
 https://sandbox.cs50.net/checks/0ad459161bed43e6886298b2ba04e4cd
+
+pset5:
+
+https://sandbox.cs50.net/checks/c9936536dd3c4facb7e800d32d6be5b8
