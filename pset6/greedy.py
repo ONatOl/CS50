@@ -1,6 +1,6 @@
 # greedy.py
 # 
-# Natalya Ostiak
+# Natalia Ostiak
 # Technology Nation
 # 
 # Calculates the minimum number of coins required to give a user change.
