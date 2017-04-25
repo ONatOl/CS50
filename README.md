@@ -30,7 +30,8 @@ pset5:
 
 https://sandbox.cs50.net/checks/955c534d81e14cfab59f523507fcd7d4
 
-PSET6:
+pset6:
+
 mario.py
 greedy.py
 caesar.py
