@@ -30,8 +30,8 @@ pset5:
 
 https://sandbox.cs50.net/checks/955c534d81e14cfab59f523507fcd7d4
 
-pset6:
-mario.py   
-greedy.py
-caesar.py
-vigenere.py
+pset6:    
+mario.py    
+greedy.py              
+caesar.py              
+vigenere.py               
