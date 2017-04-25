@@ -27,8 +27,7 @@ for c in letters:
 for c in letters: 
     key21 = c
     for c in letters:
-        key22 = c
-        key2 = key21 + key22
+        key2 = key21 + c
         result = crypt.crypt(key2, salt)
         if result == sys.argv[1]:
             print("{}".format(key2))
@@ -40,8 +39,7 @@ for c in letters:
     for c in letters:
         key32 = c
         for c in letters:
-            key33 = c
-            key3 = key31 + key32 + key33
+            key3 = key31 + key32 + c
             result = crypt.crypt(key3, salt)
             if result == sys.argv[1]:
                 print("{}".format(key3))
@@ -55,8 +53,7 @@ for c in letters:
         for c in letters:
             key43 = c
             for c in letters:
-                key44 = c
-                key4 = key41 + key42 + key43 + key44
+                key4 = key41 + key42 + key43 + c
                 result = crypt.crypt(key4, salt)
                 if result == sys.argv[1]:
                     print("{}".format(key4))
