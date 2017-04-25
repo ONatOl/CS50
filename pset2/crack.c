@@ -45,7 +45,7 @@ int main(int argc, string argv[])
         if (compareResult == 0)
         {
             printf("%s\n", key);
-            break;
+            return 0;
         }
        
     }        
@@ -63,7 +63,7 @@ int main(int argc, string argv[])
             if (compareResult == 0)
             {
                 printf("%s\n", key);
-                break;
+                return 0;
             }
         }    
     }        
@@ -83,7 +83,7 @@ int main(int argc, string argv[])
                 if (compareResult == 0)
                 {
                     printf("%s\n", key);
-                    break;
+                    return 0;
                 }
             }
         }    
@@ -107,11 +107,11 @@ int main(int argc, string argv[])
                     if (compareResult == 0)
                     {
                         printf("%s\n", key);
-                        break;
+                        return 0;
                     }
                 }
             }
         }    
-    }        
+    }       
    return 0;
 }    
