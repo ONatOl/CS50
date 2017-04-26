@@ -81,7 +81,7 @@ int main(void)
     else if (d_num==15 && cc_num_A[d_num-1]==3 && (cc_num_A[d_num-2]==4 || cc_num_A[d_num-2]==7))
             printf("AMEX\n");
         
-        else if(d_num==16 && cc_num_A[d_num-1]==5 && (cc_num_A[d_num-2]==1 || cc_num_A[d_num-2]==2 
+        else if (d_num==16 && cc_num_A[d_num-1]==5 && (cc_num_A[d_num-2]==1 || cc_num_A[d_num-2]==2 
                            || cc_num_A[d_num-2]==3 || cc_num_A[d_num-2]==4 || cc_num_A[d_num-2]==5))
                 printf("MASTERCARD\n");
             
