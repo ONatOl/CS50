@@ -31,4 +31,5 @@ mario.py
 greedy.py              
 caesar.py              
 vigenere.py       
-crack.py
+crack.py   
+credit.py
