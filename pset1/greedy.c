@@ -32,7 +32,7 @@ int main(void)
      
     c = c + i / 5;    
       
-    c = c + i%5 / 1;
+    c = c + i%5;
     
     printf("%d\n", c);
 }
