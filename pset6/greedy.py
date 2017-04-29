@@ -18,11 +18,11 @@ i = round(n * 100)
 c = i // 25
 i = i % 25
 
-c = c + i//10
+c += i//10
 i = i % 10
      
-c = c + i//5    
+c += i//5    
+
+c += i%5
       
-c = c + i%5 
-    
 print(c)
