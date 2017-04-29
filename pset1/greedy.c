@@ -1,7 +1,7 @@
 /**
  * greedy.c
  * 
- * Natalia Ostiak
+ * Natalya Ostiak
  * Technology Nation
  * 
  * Calculates the minimum number of coins required to give a user change.
@@ -20,19 +20,17 @@ int main(void)
         n = GetFloat();
     }
     while(n < 0);
-    float f = n * 100;
-    int i = (int) round(f);
+    
+    int i = (int) round(n * 100);
     int c = 0;
     
     c = i / 25;
     i = i % 25;
     
-    c = c + i / 10;
+    c += i / 10;
     i = i % 10;
      
-    c = c + i / 5;    
-      
-    c = c + i%5;
+    c += i / 5;    
     
-    printf("%d\n", c);
+    printf("%d\n", c += i%5);
 }
