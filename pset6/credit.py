@@ -38,12 +38,12 @@ cc_numSRev = ''.join(cc_numL)
 for i in range(1, d_num, 2):
     even = int(cc_numSRev[i]) * 2
     if even > 9:
-        sum_even = sum_even + even - 9
+        sum_even += even - 9
     else:
-        sum_even = sum_even + even
+        sum_even += even
             
 for i in range(0, d_num, 2):
-    sum_odd = sum_odd + int(cc_numSRev[i])
+    sum_odd += int(cc_numSRev[i])
     
 sumCheck = (sum_odd + sum_even) % 10
 
