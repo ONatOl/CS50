@@ -57,16 +57,16 @@ int main(void)
    
     // Luhn’s algorithm
     for (int i = 0; i < d_num; i = i + 2)
-        sum_odd = sum_odd + cc_num_A[i];
+        sum_odd += cc_num_A[i];
     
     for (int i = 1; i < d_num; i = i + 2)
     {
         int even = cc_num_A[i] * 2;
             
         if (even > 9)
-            sum_even = sum_even + even - 9;
+            sum_even += even - 9;
         else
-            sum_even = sum_even + even;
+            sum_even += even;
     }   
     
     sumCheck = (sum_odd + sum_even) % 10;
