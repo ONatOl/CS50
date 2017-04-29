@@ -1,5 +1,5 @@
 /**
-* dictionary.c
+ * dictionary.c
  * 
  * Natalia Ostiak
  * Technology Nation
@@ -35,7 +35,7 @@ unsigned int wordsD = 0;
  */
 bool check(const char *word)
 {
-    node *newPointer = root;    
+    node *newPointer = root;
     
     // define an index of the array of characters
     int i = 0;
@@ -49,9 +49,7 @@ bool check(const char *word)
             return false;
         newPointer = newPointer -> children[i]; 
     }   
-    if (newPointer -> is_word == true)
-        return true;
-    return false;    
+    return (newPointer -> is_word);    
 }
 
 /**
@@ -108,13 +106,13 @@ bool load(const char *dictionary)
             }
             // move the pointer to a current node
             newPointer = newPointer -> children[i];   
-        }    
+        }   
         
         if (feof(inFile))
             break;
-        
+            
         newPointer -> is_word = true;
-        newPointer = root;            
+        newPointer = root;
         wordsD++;
     }
     fclose(inFile);
