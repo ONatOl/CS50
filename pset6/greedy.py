@@ -23,6 +23,6 @@ i = i % 10
      
 c = c + i//5    
       
-c = c + i%5 // 1
+c = c + i%5 
     
 print(c)
