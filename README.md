@@ -32,5 +32,5 @@ greedy.py
 caesar.py              
 vigenere.py       
 crack.py   
-credit.py
+credit.py          
 sentiments
