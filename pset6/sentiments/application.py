@@ -30,9 +30,7 @@ def search():
     analyzer = Analyzer(positives, negatives)    
         
     n = 0 
-    positive = 0.0 
-    negative = 0.0 
-    neutral = 100.0
+    positive, negative, neutral = 0.0, 0.0, 100.0
     
     for tweet in tweets[0:100]:
         n += 1
@@ -42,6 +40,9 @@ def search():
             positive += 1
         elif score < 0.0:
             negative += 1
+            
+    if n == 0:
+        return redirect(url_for("index"))
             
     positive = positive*100/n
     negative = negative*100/n
